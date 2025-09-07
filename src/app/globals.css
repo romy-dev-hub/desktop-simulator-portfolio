@@ -375,3 +375,153 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(110, 69, 226, 0.2);
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .desktop-container {
+    overflow: auto;
+    height: 100vh;
+  }
+
+  .desktop-background {
+    position: fixed;
+    height: 100vh;
+  }
+
+  .greeting-overlay h1 {
+    font-size: 2rem;
+  }
+
+  .greeting-overlay p {
+    font-size: 1rem;
+  }
+
+  .app-grid {
+    position: relative;
+    top: 20px;
+    left: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .app-icon {
+    width: 70px;
+    margin-bottom: 10px;
+  }
+
+  .app-icon .icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .app-icon .name {
+    font-size: 0.7rem;
+  }
+
+  .window {
+    width: 90vw !important;
+    height: 70vh !important;
+    left: 5vw !important;
+    top: 15vh !important;
+    position: fixed !important;
+  }
+
+  .window-header {
+    padding: 8px 12px;
+  }
+
+  .window-content {
+    padding: 10px;
+    overflow: auto;
+  }
+
+  .taskbar {
+    height: 50px;
+    justify-content: center;
+    overflow-x: auto;
+    padding: 0 5px;
+  }
+
+  .taskbar-app {
+    white-space: nowrap;
+    font-size: 0.7rem;
+    padding: 5px 8px;
+  }
+
+  /* Form adjustments for mobile */
+  .contact-app {
+    flex-direction: column;
+  }
+
+  .social-links {
+    margin-top: 20px;
+  }
+
+  /* Skills app adjustments */
+  .skill-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .skill-icon {
+    margin-bottom: 5px;
+    margin-right: 0;
+  }
+
+  /* About app adjustments */
+  .about-app {
+    padding: 15px;
+  }
+
+  /* Projects app adjustments */
+  .project-item {
+    padding: 12px;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+  .app-grid {
+    gap: 10px;
+  }
+
+  .app-icon {
+    width: 60px;
+  }
+
+  .app-icon .icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .window {
+    width: 95vw !important;
+    left: 2.5vw !important;
+  }
+
+  .greeting-overlay h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Prevent zoom on input focus on mobile */
+@media (max-width: 768px) {
+  input, textarea {
+    font-size: 16px; /* Prevents zoom on focus in iOS */
+  }
+}
+
+.taskbar-close {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  margin-left: 5px;
+}
