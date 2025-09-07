@@ -43,9 +43,9 @@ export default function DesktopBackground() {
 
   useEffect(() => {
     const hours = new Date().getHours();
-    if (hours < 12) setGreeting('Good Morning!');
-    else if (hours < 18) setGreeting('Good Afternoon!');
-    else setGreeting('Good Evening!');
+    if (hours < 12) setGreeting('Greetings and Good Morning!');
+    else if (hours < 18) setGreeting('Greetings and Good Afternoon!');
+    else setGreeting('Greetings and Good Evening!');
   }, []);
 
   return (
@@ -63,7 +63,7 @@ export default function DesktopBackground() {
       </Canvas>
       <div className="greeting-overlay">
         <h1>{greeting}</h1>
-        <p>Welcome to my interactive portfolio</p>
+        <h2>Welcome to my interactive portfolio</h2>
       </div>
     </div>
   );
