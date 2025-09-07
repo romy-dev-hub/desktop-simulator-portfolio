@@ -48,7 +48,7 @@ export default function DesktopBackground() {
       </Canvas>
       <div className="greeting-overlay">
         <h1>{greeting}</h1>
-        <p>Welcome to my interactive portfolio</p>
+        <h2>Welcome to my interactive portfolio</h2>
       </div>
     </div>
   );
