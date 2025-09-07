@@ -28,7 +28,7 @@ export default function Desktop() {
             key={app.id}
             icon={app.icon}
             name={app.title}
-            onDoubleClick={() => openWindow(app.id, app.title, app.component)}
+            onClick={() => openWindow(app.id, app.title, app.component)}
           />
         ))}
       </div>

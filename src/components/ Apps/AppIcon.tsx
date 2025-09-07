@@ -5,14 +5,14 @@ import { motion } from 'framer-motion';
 interface AppIconProps {
   icon: React.ReactNode;
   name: string;
-  onDoubleClick: () => void;
+  onClick: () => void;
 }
 
-export default function AppIcon({ icon, name, onDoubleClick }: AppIconProps) {
+export default function AppIcon({ icon, name, onClick }: AppIconProps) {
   return (
     <motion.div
       className="app-icon"
-      onDoubleClick={onDoubleClick}
+      onClick={onClick}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >
