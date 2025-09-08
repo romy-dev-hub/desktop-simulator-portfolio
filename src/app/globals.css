@@ -525,3 +525,13 @@ body {
   font-size: 12px;
   margin-left: 5px;
 }
+
+/* Ensure windows stack correctly */
+.window {
+  transition: z-index 0.2s ease;
+}
+
+/* Prevent window content from being selected when dragging */
+.window-header {
+  user-select: none;
+}

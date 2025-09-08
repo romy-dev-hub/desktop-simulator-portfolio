@@ -13,30 +13,10 @@ export default function Desktop() {
   const { openWindow } = useWindowManager();
 
   const apps = [
-    { 
-      id: 'about', 
-      title: 'About Me', 
-      icon: '/icons/aboutapp.png', // Path to your icon
-      component: <AboutApp /> 
-    },
-    { 
-      id: 'contact', 
-      title: 'Contact', 
-      icon: '/icons/contactapp.png', // Path to your icon
-      component: <ContactApp /> 
-    },
-    { 
-      id: 'skills', 
-      title: 'Skills', 
-      icon: '/icons/skillsapp.png', // Path to your icon
-      component: <SkillsApp /> 
-    },
-    { 
-      id: 'projects', 
-      title: 'Projects', 
-      icon: '/icons/projectsapp.png', // Path to your icon
-      component: <ProjectsApp /> 
-    },
+    { id: 'about', title: 'About Me', icon: '/icons/aboutapp.png', component: <AboutApp /> },
+    { id: 'contact', title: 'Contact', icon: '/icons/contactapp.png', component: <ContactApp /> },
+    { id: 'skills', title: 'Skills', icon: '/icons/skillsapp.png', component: <SkillsApp /> },
+    { id: 'projects', title: 'Projects', icon: '/icons/projectsapp.png', component: <ProjectsApp /> },
   ];
 
   return (

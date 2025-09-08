@@ -4,13 +4,14 @@ import { createContext, useContext, ReactNode } from 'react';
 
 interface Window {
   id: string;
+  appId: string;
   title: string;
   component: ReactNode;
 }
 
 interface WindowContextType {
   windows: Window[];
-  openWindow: (id: string, title: string, component: ReactNode) => void;
+  openWindow: (appId: string, title: string, component: ReactNode) => void;
   closeWindow: (id: string) => void;
   focusWindow: (id: string) => void;
   focusedWindow: string | null;

@@ -21,9 +21,17 @@ export default function Taskbar() {
     };
   }, []);
 
+  // Group windows by appId to avoid duplicates in taskbar
+  const uniqueAppWindows = windows.reduce((acc, window) => {
+    if (!acc.find(w => w.appId === window.appId)) {
+      acc.push(window);
+    }
+    return acc;
+  }, [] as typeof windows);
+
   return (
     <div className="taskbar">
-      {windows.map(window => (
+      {uniqueAppWindows.map(window => (
         <button
           key={window.id}
           className={`taskbar-app ${focusedWindow === window.id ? 'active' : ''}`}
@@ -35,7 +43,8 @@ export default function Taskbar() {
               className="taskbar-close"
               onClick={(e) => {
                 e.stopPropagation();
-                closeWindow(window.id);
+                // Close all windows of this app type
+                windows.filter(w => w.appId === window.appId).forEach(w => closeWindow(w.id));
               }}
               style={{ marginLeft: '8px', cursor: 'pointer' }}
             >
