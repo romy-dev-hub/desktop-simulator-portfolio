@@ -535,3 +535,116 @@ body {
 .window-header {
   user-select: none;
 }
+
+/* About App section */
+
+.about-app {
+  padding: 20px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.about-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.about-profile {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 30px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.profile-image-container {
+  flex-shrink: 0;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(110, 69, 226, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.profile-info h2 {
+  font-size: 2rem;
+  margin-bottom: 5px;
+  background: linear-gradient(45deg, #6e45e2, #88d3ce);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.profile-tagline {
+  color: #88d3ce;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
+
+.profile-links {
+  display: flex;
+  gap: 15px;
+}
+
+.profile-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.profile-link:hover {
+  background: rgba(110, 69, 226, 0.2);
+  transform: translateY(-2px);
+}
+
+.about-bio h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #6e45e2;
+}
+
+.about-bio p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-size: 1.05rem;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .about-app {
+    padding: 15px;
+  }
+  
+  .about-profile {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .profile-links {
+    justify-content: center;
+  }
+  
+  .profile-image {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .profile-info h2 {
+    font-size: 1.8rem;
+  }
+}
