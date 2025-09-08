@@ -1,10 +1,28 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { useState, useEffect } from 'react';
 
 export default function AboutApp() {
+  const [currentTagline, setCurrentTagline] = useState(0);
+  
+  const taglines = [
+    "Frontend Developer",
+    "Games Developer",
+    "Future Mern Stack Developer",
+    "Future AI Engineer"
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTagline((prev) => (prev + 1) % taglines.length);
+    }, 3000); // Change every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [taglines.length]);
+
   return (
     <div className="about-app">
       <motion.div 
@@ -16,7 +34,7 @@ export default function AboutApp() {
         <div className="about-profile">
           <div className="profile-image-container">
             <Image
-              src="/images/profile.jpg" // Update this path to your actual photo
+              src="/images/profile.gif"
               alt="Romy"
               width={150}
               height={150}
@@ -26,7 +44,21 @@ export default function AboutApp() {
           
           <div className="profile-info">
             <h2>Romy</h2>
-            <p className="profile-tagline">Full Stack Developer</p>
+            
+            <div className="tagline-container">
+              <AnimatePresence mode="wait">
+                <motion.p
+                  key={currentTagline}
+                  className="profile-tagline"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  {taglines[currentTagline]}
+                </motion.p>
+              </AnimatePresence>
+            </div>
             
             <div className="profile-links">
               <a 
@@ -54,18 +86,19 @@ export default function AboutApp() {
         <div className="about-bio">
           <h3>About Me</h3>
           <p>
-            I'm a passionate full stack developer who loves creating innovative web solutions. 
-            With expertise in modern technologies like React, Next.js, and cloud platforms, 
+            I'm a passionate developer who loves creating innovative web solutions and games. 
+            With expertise in frontend technologies and a growing interest in full-stack development,
             I enjoy turning complex ideas into user-friendly applications.
           </p>
           <p>
-            My approach combines clean code, thoughtful design, and attention to detail 
-            to build experiences that are both functional and enjoyable to use.
+            My journey is leading me toward mastering the MERN stack and exploring the fascinating 
+            world of artificial intelligence. I believe in continuous learning and pushing the 
+            boundaries of what's possible with code.
           </p>
           <p>
             When I'm not coding, you might find me exploring new technologies, 
-            contributing to open source projects, or sharing knowledge with the developer community.
-            Or making a game :) !
+            working on game development projects, or contributing to open source.
+            Or better yet, making a game :) 
           </p>
         </div>
       </motion.div>
