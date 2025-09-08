@@ -27,7 +27,8 @@ import {
   SiOracle,
   SiPopos,
   SiBun,
-  SiExpress
+  SiExpress,
+  SiCanva
 } from 'react-icons/si';
 import { IoLogoHtml5 } from "react-icons/io";
 import { IoLogoCss3 } from "react-icons/io";
@@ -93,6 +94,7 @@ export default function SkillsApp() {
         { name: "Git", icon: <FaGitAlt />, level: 85 },
         { name: "GitHub", icon: <FaGithub />, level: 70 },
         { name: "Vercel", icon: <IoLogoVercel />, level: 67 },
+        { name: "Canva", icon: <SiCanva />, level: 92 },
       ]
     },
     {
