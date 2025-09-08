@@ -3,10 +3,11 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function AboutApp() {
   const [currentTagline, setCurrentTagline] = useState(0);
+  const taglineRef = useRef<HTMLDivElement>(null);
   
   const taglines = [
     "Frontend Developer",
@@ -18,7 +19,7 @@ export default function AboutApp() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTagline((prev) => (prev + 1) % taglines.length);
-    }, 3000); // Change every 3 seconds
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [taglines.length]);
@@ -34,7 +35,7 @@ export default function AboutApp() {
         <div className="about-profile">
           <div className="profile-image-container">
             <Image
-              src="/images/profile.gif"
+              src="/icons/profile.gif"
               alt="Romy"
               width={150}
               height={150}
@@ -43,11 +44,11 @@ export default function AboutApp() {
           </div>
           
           <div className="profile-info">
-            <h2>Romy</h2>
+            <h2>Xiao Ro</h2>
             
-            <div className="tagline-container">
+            <div className="tagline-container" ref={taglineRef}>
               <AnimatePresence mode="wait">
-                <motion.p
+                <motion.span
                   key={currentTagline}
                   className="profile-tagline"
                   initial={{ opacity: 0, y: 10 }}
@@ -56,7 +57,7 @@ export default function AboutApp() {
                   transition={{ duration: 0.5 }}
                 >
                   {taglines[currentTagline]}
-                </motion.p>
+                </motion.span>
               </AnimatePresence>
             </div>
             
@@ -98,7 +99,6 @@ export default function AboutApp() {
           <p>
             When I'm not coding, you might find me exploring new technologies, 
             working on game development projects, or contributing to open source.
-            Or better yet, making a game :) 
           </p>
         </div>
       </motion.div>

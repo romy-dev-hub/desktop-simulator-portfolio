@@ -559,11 +559,13 @@ body {
 }
 
 .tagline-container {
-  height: 30px; /* Fixed height to prevent layout shift */
-  margin-bottom: 15px;
+  height: 33px; /* Fixed height to prevent layout shift */
+  margin-bottom: 17px;
+  margin-top: 23px;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .profile-tagline {
@@ -572,6 +574,9 @@ body {
   opacity: 0.9;
   text-align: center;
   position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
 
 .profile-image-container {
@@ -595,6 +600,8 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
+  display: flex;
+  justify-content: center;
 }
 
 .profile-tagline {
