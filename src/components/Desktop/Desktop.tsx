@@ -2,7 +2,6 @@
 
 import DesktopBackground from './DesktopBackground';
 import AppIcon from '@/components/ Apps/AppIcon';
-import { FaUser, FaEnvelope, FaCode, FaFolderOpen, FaTerminal} from 'react-icons/fa';
 import { useWindowManager } from '@/hooks/useWindowManager';
 import AboutApp from '@/components/ Apps/AboutApp';
 import ContactApp from '@/components/ Apps/ContactApp';

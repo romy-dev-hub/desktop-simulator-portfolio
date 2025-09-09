@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useState, useRef, useEffect } from 'react';
-import { FaTerminal, FaQuestionCircle, FaUser, FaGraduationCap, FaHeart, FaLightbulb } from 'react-icons/fa';
+import { FaTerminal, FaQuestionCircle } from 'react-icons/fa';
 
 export default function ConsoleApp() {
   const [commandHistory, setCommandHistory] = useState<Array<{command: string, output: string}>>([]);
