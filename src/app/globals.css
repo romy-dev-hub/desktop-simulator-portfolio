@@ -812,9 +812,9 @@ body {
 
 .contact-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.5fr; /* Make form section wider */
   gap: 40px;
-  max-width: 1200px;
+  max-width: 1400px; /* Increase max width */
   margin: 0 auto;
 }
 
@@ -896,7 +896,7 @@ body {
 .contact-form-container {
   background: rgba(255, 255, 255, 0.03);
   border-radius: 10px;
-  padding: 25px;
+  padding: 30px; /* Increase padding */
 }
 
 .contact-form {
@@ -931,6 +931,7 @@ body {
   color: #fff;
   font-family: inherit;
   transition: all 0.3s ease;
+  width: 100%;
 }
 
 .form-group input:focus,
@@ -1022,5 +1023,20 @@ body {
   
   .contact-info h2 {
     font-size: 1.5rem;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .contact-content {
+    grid-template-columns: 1fr 1.2fr;
+    max-width: 1100px;
+  }
+}
+
+@media (max-width: 968px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 }

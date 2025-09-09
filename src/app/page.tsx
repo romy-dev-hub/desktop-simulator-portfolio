@@ -7,12 +7,12 @@ import Taskbar from '@/components/Desktop/Taskbar';
 import { WindowContext } from '@/hooks/useWindowManager';
 
 export default function HomePage() {
-  const [windows, setWindows] = useState<Array<{ id: string; appId: string; title: string; component: React.ReactNode }>>([]);
+  const [windows, setWindows] = useState<Array<{ id: string; appId: string; title: string; component: React.ReactNode; width?: number; height?: number }>>([]);
   const [focusedWindow, setFocusedWindow] = useState<string | null>(null);
 
-  const openWindow = (appId: string, title: string, component: React.ReactNode) => {
+  const openWindow = (appId: string, title: string, component: React.ReactNode, size?: { width?: number, height?: number }) => {
     const id = `${appId}-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
-    setWindows(prev => [...prev, { id, appId, title, component }]);
+    setWindows(prev => [...prev, { id, appId, title, component, width: size?.width, height: size?.height }]);
     setFocusedWindow(id);
   };
 

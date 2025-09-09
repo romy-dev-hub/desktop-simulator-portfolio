@@ -80,7 +80,7 @@ export default function ContactApp() {
               </div>
               <div className="contact-text">
                 <h4>Email</h4>
-                <p>romy.dev.hub@gmail.com</p>
+                <p>roumaissa.hadibi.dev@gmail.com</p>
               </div>
             </div>
           </div>

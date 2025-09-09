@@ -13,6 +13,8 @@ export default function WindowManager() {
           key={window.id}
           id={window.id}
           title={window.title}
+          initialWidth={window.width}
+          initialHeight={window.height}
         >
           {window.component}
         </Window>

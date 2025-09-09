@@ -7,11 +7,13 @@ interface Window {
   appId: string;
   title: string;
   component: ReactNode;
+  width?: number;
+  height?: number;
 }
 
 interface WindowContextType {
   windows: Window[];
-  openWindow: (appId: string, title: string, component: ReactNode) => void;
+  openWindow: (appId: string, title: string, component: ReactNode, size?: { width?: number, height?: number }) => void;
   closeWindow: (id: string) => void;
   focusWindow: (id: string) => void;
   focusedWindow: string | null;
