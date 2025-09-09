@@ -1205,3 +1205,58 @@ body {
     justify-content: center;
   }
 }
+
+/* GitHub CTA Section */
+.github-cta {
+  margin-top: 40px;
+  padding: 30px;
+  background: linear-gradient(135deg, rgba(110, 69, 226, 0.1), rgba(136, 211, 206, 0.1));
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid rgba(110, 69, 226, 0.2);
+}
+
+.cta-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #88d3ce;
+}
+
+.cta-content p {
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.github-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(45deg, #6e45e2, #88d3ce);
+  color: white;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.github-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(110, 69, 226, 0.3);
+}
+
+/* Responsive styles for CTA */
+@media (max-width: 768px) {
+  .github-cta {
+    padding: 20px;
+    margin-top: 30px;
+  }
+  
+  .cta-content h3 {
+    font-size: 1.3rem;
+  }
+  
+  .github-button {
+    padding: 10px 20px;
+  }
+}

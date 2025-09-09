@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt, FaGamepad, FaDatabase, FaBlog, FaUsers, FaCalculator } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaGamepad, FaDatabase, FaBlog, FaUsers, FaCalculator, FaArrowRight } from 'react-icons/fa';
 
 export default function ProjectsApp() {
   const projects = [
@@ -136,6 +136,29 @@ export default function ProjectsApp() {
             </motion.div>
           ))}
         </div>
+        
+         {/* GitHub CTA Section */}
+        <motion.div 
+          className="github-cta"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+        >
+          <div className="cta-content">
+            <h3>Want to see more projects?</h3>
+            <p>Check out my GitHub profile for more of my work and contributions</p>
+            <a 
+              href="https://github.com/romy-dev-hub" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="github-button"
+            >
+              <FaGithub />
+              <span>View My GitHub</span>
+              <FaArrowRight />
+            </a>
+          </div>
+        </motion.div>
       </motion.div>
     </div>
   );
