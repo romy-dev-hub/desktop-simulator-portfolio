@@ -426,6 +426,9 @@ body {
     left: 5vw !important;
     top: 15vh !important;
     position: fixed !important;
+    /* Increased blur effect for mobile */
+    backdrop-filter: blur(20px) !important;
+    background: rgba(30, 30, 50, 0.7) !important;
   }
 
   .window-header {
