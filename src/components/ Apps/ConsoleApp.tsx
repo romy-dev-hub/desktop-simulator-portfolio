@@ -62,7 +62,7 @@ Available commands:
         `;
         break;
       case '--age':
-        output = "I&apos;m in my early 20s. Age is just a number, but my passion for coding is timeless! 🚀";
+        output = "I'm in my early 20s. Age is just a number, but my passion for coding is timeless! 🚀";
         break;
       case '--education':
         output = `
