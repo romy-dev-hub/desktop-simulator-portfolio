@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt, FaGamepad, FaDatabase, FaBlog, FaUsers } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaGamepad, FaDatabase, FaBlog, FaUsers, FaCalculator } from 'react-icons/fa';
 
 export default function ProjectsApp() {
   const projects = [
@@ -44,6 +44,26 @@ export default function ProjectsApp() {
       demoUrl: null,
       icon: <FaDatabase size={24} />,
       status: "Completed"
+    },
+    {
+      id: 5,
+      title: "Programming Calculator",
+      description: "An app programming calculator with support for various numeral systems and bitwise operations.",
+      technologies: ["Assembly", "DosBox", "TASM"],
+      githubUrl: "https://github.com/romy-dev-hub/assembly-calculator-",
+      demoUrl: null,
+      icon: <FaCalculator size={24} />,
+      status: "Completed"
+    },
+    {
+      id: 6,
+      title: "Personal Portfolio",
+      description: "A personal portfolio website showcasing my projects and skills.",
+      technologies: ["Next.js", "React", "Tailwind CSS", "Framer Motion", "Three.js"],
+      githubUrl: "https://github.com/romy-dev-hub/xiao-ro-portfolio",
+      demoUrl: "https://xiao-ro-portfolio.vercel.app/",
+      icon: <FaExternalLinkAlt size={24} />,
+      status: "Completed"
     }
   ];
 
@@ -56,7 +76,7 @@ export default function ProjectsApp() {
       >
         <div className="projects-header">
           <h2>My Projects</h2>
-          <p>A collection of my recent work and personal projects</p>
+          <p>A collection of my recent work and top personal projects</p>
         </div>
 
         <div className="projects-grid">
