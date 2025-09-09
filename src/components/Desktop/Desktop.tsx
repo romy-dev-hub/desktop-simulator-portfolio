@@ -2,12 +2,14 @@
 
 import DesktopBackground from './DesktopBackground';
 import AppIcon from '@/components/ Apps/AppIcon';
-import { FaUser, FaEnvelope, FaCode, FaFolderOpen } from 'react-icons/fa';
+import { FaUser, FaEnvelope, FaCode, FaFolderOpen, FaTerminal} from 'react-icons/fa';
 import { useWindowManager } from '@/hooks/useWindowManager';
 import AboutApp from '@/components/ Apps/AboutApp';
 import ContactApp from '@/components/ Apps/ContactApp';
 import SkillsApp from '@/components/ Apps/SkillsApp';
 import ProjectsApp from '@/components/ Apps/ProjectsApp';
+import ConsoleApp from '@/components/ Apps/ConsoleApp'; 
+
 
 export default function Desktop() {
   const { openWindow } = useWindowManager();
@@ -40,6 +42,13 @@ export default function Desktop() {
       icon: '/icons/projectsapp.png',
       component: <ProjectsApp />,
       size: { width: 700, height: 500 } // Default size
+    },
+    {
+      id: 'console',
+      title: 'Console',
+      icon: "/icons/consoleapp.png",
+      component: <ConsoleApp />,
+      size: { width: 700, height: 500 }
     },
   ];
 
