@@ -42,13 +42,17 @@ export default function ContactApp() {
       body: JSON.stringify(formData),
     });
 
-    if (response.ok) {
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    } else {
-      setSubmitStatus('error');
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
+
+    const result = await response.json();
+    console.log('Success:', result);
+    
+    setSubmitStatus('success');
+    setFormData({ name: '', email: '', subject: '', message: '' });
   } catch (error) {
+    console.error('Error details:', error);
     setSubmitStatus('error');
   } finally {
     setIsSubmitting(false);
