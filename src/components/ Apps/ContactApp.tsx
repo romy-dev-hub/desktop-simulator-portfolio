@@ -34,7 +34,8 @@ export default function ContactApp() {
   setIsSubmitting(true);
   
   try {
-    const response = await fetch('http://localhost:5000/api/contact', {
+    const API_URL = 'https://desktop-portfolio-api-production.up.railway.app';
+    const response = await fetch(`${API_URL}/api/contact`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
