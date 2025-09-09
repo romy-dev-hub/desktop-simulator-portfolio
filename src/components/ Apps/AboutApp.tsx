@@ -87,17 +87,17 @@ export default function AboutApp() {
         <div className="about-bio">
           <h3>About Me</h3>
           <p>
-            I'm a passionate developer who loves creating innovative web solutions and games. 
+            I&apos;m a passionate developer who loves creating innovative web solutions and games. 
             With expertise in frontend technologies and a growing interest in full-stack development,
             I enjoy turning complex ideas into user-friendly applications.
           </p>
           <p>
             My journey is leading me toward mastering the MERN stack and exploring the fascinating 
             world of artificial intelligence. I believe in continuous learning and pushing the 
-            boundaries of what's possible with code.
+            boundaries of what&apos;s possible with code.
           </p>
           <p>
-            When I'm not coding, you might find me exploring new technologies, 
+            When I&apos;m not coding, you might find me exploring new technologies, 
             working on game development projects, or contributing to open source.
           </p>
         </div>

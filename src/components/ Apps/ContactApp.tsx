@@ -9,7 +9,6 @@ import {
   FaTwitter, 
   FaEnvelope,
   FaMapMarkerAlt,
-  FaPhone
 } from 'react-icons/fa';
 import { SiLeetcode } from 'react-icons/si';
 
@@ -59,7 +58,7 @@ export default function ContactApp() {
         >
           <h2>Get In Touch</h2>
           <p>
-            I'm always open to discussing new projects, creative ideas, or 
+            I&apos;m always open to discussing new projects, creative ideas, or 
             opportunities to be part of your vision.
           </p>
           

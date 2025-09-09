@@ -16,8 +16,8 @@ export default function ConsoleApp() {
 useEffect(() => {
   setCommandHistory([{
     command: '',
-    output: `Welcome to xiao's console! 🚀
-    
+    output: `Welcome to xiao&apos;s console! 🚀
+
     Type '--menu' to see all available commands and learn more about me.
     
     This console is a fun way to explore my portfolio. Try different commands to discover my skills, projects, and interests!`
@@ -62,7 +62,7 @@ Available commands:
         `;
         break;
       case '--age':
-        output = "I'm in my early 20s. Age is just a number, but my passion for coding is timeless! 🚀";
+        output = "I&apos;m in my early 20s. Age is just a number, but my passion for coding is timeless! 🚀";
         break;
       case '--education':
         output = `
@@ -111,7 +111,7 @@ Contact Information:
 - GitHub: github.com/romy-dev-hub
 - Location: Algeria
 
-Feel free to reach out! I'm always open to new opportunities.
+Feel free to reach out! I&apos;m always open to new opportunities.
         `;
         break;
       case '--clear':

@@ -19,7 +19,6 @@ import {
   SiMongodb,
   SiJavascript,
   SiTypescript,
-  SiUbuntu,
   SiC,
   SiLua,
   SiAssemblyscript,
