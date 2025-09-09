@@ -16,10 +16,10 @@ export default function ConsoleApp() {
 useEffect(() => {
   setCommandHistory([{
     command: '',
-    output: `Welcome to xiao&apos;s console! 🚀
+    output: `Welcome to xiao's console! 🚀
 
     Type '--menu' to see all available commands and learn more about me.
-    
+
     This console is a fun way to explore my portfolio. Try different commands to discover my skills, projects, and interests!`
     }]);
 
@@ -181,7 +181,7 @@ Feel free to reach out! I&apos;m always open to new opportunities.
 
         <div className="console-help">
           <FaQuestionCircle />
-          <span>Type '--menu' to see all available commands</span>
+          <span>Type &apos;--menu&apos; to see all available commands</span>
         </div>
       </div>
     </div>
