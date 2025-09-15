@@ -34,14 +34,14 @@ export default function ContactApp() {
   setIsSubmitting(true);
   
   try {
-    const API_URL = 'https://desktop-portfolio-api-production.up.railway.app';
-    const response = await fetch(`${API_URL}/api/contact`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    });
+    const API_URL = "https://script.google.com/macros/s/AKfycbw_ueli5uZoJ17JDU7-YYFjGTzf2URXGIY5EKS44CgySFyLHsUUykA2A14ntqFobbQe5A/exec";
+    const SECRET_KEY = process.env.NEXT_PUBLIC_CONTACT_SECRET!;
+    const response = await fetch(API_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...formData, secret: SECRET_KEY }),
+  });
+
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
