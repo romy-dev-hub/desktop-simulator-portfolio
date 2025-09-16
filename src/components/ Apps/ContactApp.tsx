@@ -46,7 +46,7 @@ export default function ContactApp() {
       params.append("message", formData.message);
       params.append("secret", SECRET_KEY);
 
-      await fetch(API_URL, { method: "POST", mode: "no-cors", body: params });
+      const response = await fetch(API_URL, { method: "POST", mode: "no-cors", body: params });
 
       // In many successful setups you'll get a normal JSON response back.
       // Some environments could still make the response opaque — handle both.
