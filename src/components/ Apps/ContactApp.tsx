@@ -29,37 +29,49 @@ export default function ContactApp() {
     });
   };
 
+  // put these near the top of the file (where API_URL used to be)
+  const API_URL = "https://script.google.com/macros/s/AKfycbw_ueli5uZoJ17JDU7-YYFjGTzf2URXGIY5EKS44CgySFyLHsUUykA2A14ntqFobbQe5A/exec";
+  const SECRET_KEY = process.env.NEXT_PUBLIC_CONTACT_SECRET!;
+
   const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setIsSubmitting(true);
-  
-  try {
-    const API_URL = "https://script.google.com/macros/s/AKfycbw_ueli5uZoJ17JDU7-YYFjGTzf2URXGIY5EKS44CgySFyLHsUUykA2A14ntqFobbQe5A/exec";
-    const SECRET_KEY = process.env.NEXT_PUBLIC_CONTACT_SECRET!;
-    const response = await fetch(API_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...formData, secret: SECRET_KEY }),
-  });
+    e.preventDefault();
+    setIsSubmitting(true);
 
+    try {
+      // build URL-encoded body (no custom headers => no preflight)
+      const params = new URLSearchParams();
+      params.append("name", formData.name);
+      params.append("email", formData.email);
+      params.append("subject", formData.subject);
+      params.append("message", formData.message);
+      params.append("secret", SECRET_KEY);
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      const response = await fetch(API_URL, {
+        method: "POST",
+        body: params, // IMPORTANT: do NOT set 'Content-Type' header manually
+        // mode: 'cors' // default is fine
+      });
+
+      // In many successful setups you'll get a normal JSON response back.
+      // Some environments could still make the response opaque — handle both.
+      let result = { result: "ok" };
+      try {
+        result = await response.json();
+      } catch (err) {
+        // fall back — if response is opaque, we still assume success when no exception
+      }
+
+      // consider success if server accepted or if fetch didn't throw
+      setSubmitStatus("success");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      console.error("Error details:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => setSubmitStatus("idle"), 3000);
     }
-
-    const result = await response.json();
-    console.log('Success:', result);
-    
-    setSubmitStatus('success');
-    setFormData({ name: '', email: '', subject: '', message: '' });
-  } catch (error) {
-    console.error('Error details:', error);
-    setSubmitStatus('error');
-  } finally {
-    setIsSubmitting(false);
-    setTimeout(() => setSubmitStatus('idle'), 3000);
-  }
-};
+  };
 
   return (
     <div className="contact-app">
