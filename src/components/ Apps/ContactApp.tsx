@@ -38,26 +38,19 @@ export default function ContactApp() {
     setIsSubmitting(true);
 
     try {
-      // build URL-encoded body (no custom headers => no preflight)
-      const params = new URLSearchParams();
-      params.append("name", formData.name);
-      params.append("email", formData.email);
-      params.append("subject", formData.subject);
-      params.append("message", formData.message);
-      params.append("secret", SECRET_KEY);
+      // declare the variable properly
+      const formDataToSend = new FormData();
+      formDataToSend.append("name", formData.name);
+      formDataToSend.append("email", formData.email);
+      formDataToSend.append("subject", formData.subject);
+      formDataToSend.append("message", formData.message);
+      formDataToSend.append("secret", SECRET_KEY);
 
-      const response = await fetch(API_URL, { method: "POST", mode: "no-cors", body: params });
+      const response = await fetch(API_URL, {
+        method: "POST",
+        body: formDataToSend, // use the correct variable name
+      });
 
-      // In many successful setups you'll get a normal JSON response back.
-      // Some environments could still make the response opaque — handle both.
-      let result = { result: "ok" };
-      try {
-        result = await response.json();
-      } catch (err) {
-        // fall back — if response is opaque, we still assume success when no exception
-      }
-
-      // consider success if server accepted or if fetch didn't throw
       setSubmitStatus("success");
       setFormData({ name: "", email: "", subject: "", message: "" });
     } catch (error) {
@@ -68,6 +61,7 @@ export default function ContactApp() {
       setTimeout(() => setSubmitStatus("idle"), 3000);
     }
   };
+
 
   return (
     <div className="contact-app">
